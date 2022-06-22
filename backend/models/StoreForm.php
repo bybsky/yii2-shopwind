@@ -82,6 +82,7 @@ class StoreForm extends Model
 		if(isset($post->cate_id) && $post->cate_id) {
 			if(!($query = CategoryStoreModel::find()->where(['store_id' => $this->store_id])->one())) {
 				$query = new CategoryStoreModel();
+				$query->store_id = $this->store_id;
 			}
 			$query->cate_id = $post->cate_id;
 			$query->save();
