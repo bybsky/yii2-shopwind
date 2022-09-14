@@ -83,10 +83,6 @@
 						</div>
 					</div>
 				</li>
-				<li class="each float-left inline-block"><a class="{if $index}current{/if}" href="{$siteUrl}">{$lang.home}</a></li>
-				<!--{foreach from=$navs.middle item=nav name=fe_nav}-->
-				<li class="each float-left inline-block"><a class="{if !$index and stristr($app->request->url,$nav.link)}current{/if}" href="{$nav.link|url_format}"{if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}{if $smarty.foreach.fe_nav.iteration eq 1}<span class="absolute block">HOT</span>{/if}</a></li>
-				<!--{/foreach}-->
 			</ul>
 		</div>
 	</div>
