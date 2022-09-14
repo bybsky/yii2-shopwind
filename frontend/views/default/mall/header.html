@@ -25,18 +25,6 @@
 				<!--{/foreach}--> 
 			</div>
 		</div>
-		<div class="header_cart {if $carts_top.kinds eq 0}J_GlobalPop{/if}">
-        	<div class="item">
-			<div class="title clearfix"> <b></b><a href="{url route='cart/index'}">去购物车结算</a><em>></em> </div>
-			<div class="shoping"><span class="count-cart J_C_T_GoodsKinds">{$carts_top.kinds|default:0}</span></div>
-			<div class="shadow"></div>
-			<!--{if $carts_top.kinds eq 0}-->
-			<div class="cart-list eject-box">
-				<div class="nogoods clearfix"> <b></b>购物车中还没有商品，赶紧选购吧！ </div>
-			</div>
-			<!--{/if}-->
-            </div>
-		</div>
 	</div>
     <!--{if $index}-->
     <div class="shop-t-pop J_SearchFixed hidden">
