@@ -87,7 +87,7 @@
   }
 </style>
 <div id="main" class="clearfix"> {include file="user.menu.html"}
-  <div id="right"> {include file="user.curlocal.html"}
+  <div id="right" style="width: 930px;"> {include file="user.curlocal.html"}
     <div class="wrapful"> {include file="user.submenu.html"}
       <div class="wrap publish">
         <div class="public">
@@ -236,15 +236,7 @@
                   <input name="price" value="{$goods._specs.0.price}" type="text" class="text width_short" />
                 </div>
               </li>
-              <!--{if $integral_enabled}-->
-              <li class="subbox clearfix" ectype="max_exchange">
-                <label class="subbox-title">积分抵扣：</label>
-                <div class="subbox-body">
-                  <input name="max_exchange" value="{$goods.max_exchange}" type="text" class="text width_short" />
-                  <span class="gray">{$lang.rechange_price_note}</span>
-                </div>
-              </li>
-              <!--{/if}-->
+      
 
               <li class="subbox clearfix">
                 <label class="subbox-title">商品规格：</label>
@@ -444,46 +436,8 @@
               </li>
               <!--{/if}-->
             </ul>
-            <h5 class="box-title">3.物流及配送设置</h5>
+            <h5 class="box-title">3.其他设置</h5>
             <ul class="box-body">
-              <li class="subbox clearfix">
-                <label class="subbox-title">{$lang.delivery_template}：</label>
-                <div class="subbox-body">
-                  <select class="text" name="dt_id">
-                    <!--{foreach from=$deliverys item=delivery name=fe_delivery}-->
-                    <option value="{$delivery.template_id}" {if $app->controller->action->id eq 'add' &&
-                      $smarty.foreach.fe_delivery.first} checked="checked" {elseif $goods.dt_id==$delivery.template_id}
-                      selected="selected" {/if} >{$delivery.name}</option>
-                    <!--{/foreach}-->
-                  </select>
-                  <a href="{url route='my_delivery/index'}" target="_blank"
-                    style="color:blue; text-decoration:none">{$lang.delivery_template_list}</a>
-                </div>
-              </li>
-            </ul>
-            <h5 class="box-title">4.其他设置</h5>
-            <ul class="box-body">
-              <!--{if $exclusive}-->
-              <li class="subbox clearfix">
-                <label class="subbox-title">手机专享：</label>
-                <div class="subbox-body"> <span class="clearfix">
-                    <label
-                      class="switch-checkbox-radio box-align-center float-left J_SwtcherInput {if $exclusive.selected neq '0'}checked{/if}"
-                      for="exclusive[status]"><span class="switcher-style block"></span></label>
-                    <input type="checkbox" name="exclusive[status]" value="1" id="exclusive[status]"
-                      class="J_ExclusiveCheckbox hidden" {if $exclusive.selected neq '0' }checked="checked" {/if} />
-                    <em class="gray ml10 inline-block" style="margin-top:3px;">{$exclusive.desc}</em> </span>
-                  <div class="J_ExclusiveDetailSetting mt10 {if $exclusive.selected eq '0'}hidden{/if}"> 享
-                    <input type="text" name="exclusive[discount]" id="exclusive[discount]" class="width_short"
-                      value="{$exclusive.config.discount}">
-                    折，或减
-                    <input type="text" name="exclusive[decrease]" id="exclusive[decrease]" class="width_short"
-                      value="{$exclusive.config.decrease}">
-                    元 <em class="gray ml10 inline-block mt5">如果留空，则执行默认优惠。仅需设置折扣<font class="red">或</font>减价</em>
-                  </div>
-                </div>
-              </li>
-              <!--{/if}-->
               <li class="subbox clearfix">
                 <label class="subbox-title">商品上架：</label>
                 <div class="subbox-body">
