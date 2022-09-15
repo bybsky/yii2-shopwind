@@ -46,10 +46,8 @@ var ENABLE_PRETTY = "{$enablePretty}";
          </div>
          <ul class="quick-menu">
            {if !$index}<li class="home"><a href="{$siteUrl}">{$lang.back_home}</a></li>{/if}
-           <li><a href="{url route='buyer_order/index'}">我的订单</a></li>
+          
            <li><a href="{url route='my_favorite/index'}">我的收藏</a></li>
-           <li><a href="{url route='my_coupon/index'}">我的优惠券</a></li>
-           <li><a href="{url route='my_integral/index'}">我的积分</a></li>
            <li><a class="red" href="{url route='seller/index'}">商家管理</a></li>
            <li><a href="{url route='apply/fill'}" style="border-right: 0; padding-right:0;">商家入驻</a></li>
         </ul>
@@ -62,15 +60,13 @@ var ENABLE_PRETTY = "{$enablePretty}";
             <ul class="clearfix">
                 <li class="first"><a href="{$app->homeUrl}"><span>首页</span></a></li>
                 <!--{if in_array($smarty.session.userRole, array('buyer'))}-->
-                <li class="{if $app->controller->id eq 'user'}current{/if}"><a href="{url route='user/index'}"><span>账户概览</span></a></li>
-                <li class="{if $app->controller->id eq 'buyer_order'}current{/if}"><a href="{url route='buyer_order/index'}"><span>我的订单</span></a></li>
-                <li class="{if $app->controller->id eq 'deposit'}current{/if}"><a href="{url route='deposit/index'}"><span>资产管理</span></a></li>
-                <li class="{if $app->controller->id eq 'refund'}current{/if}"><a href="{url route='refund/index'}"><span>退款/维权</span></a></li>
+                <!-- <li class="{if $app->controller->id eq 'user'}current{/if}"><a href="{url route='user/index'}"><span>账户概览</span></a></li> -->
+                <!-- <li class="{if $app->controller->id eq 'buyer_order'}current{/if}"><a href="{url route='buyer_order/index'}"><span>我的订单</span></a></li> -->
+                <!-- <li class="{if $app->controller->id eq 'deposit'}current{/if}"><a href="{url route='deposit/index'}"><span>资产管理</span></a></li> -->
+                <!-- <li class="{if $app->controller->id eq 'refund'}current{/if}"><a href="{url route='refund/index'}"><span>退款/维权</span></a></li> -->
                 <!--{else}-->
                 <li class="{if $app->controller->id eq 'my_goods'}current{/if}"><a href="{url route='my_goods/index'}"><span>商品管理</span></a></li>
-                <li class="{if $app->controller->id eq 'seller_order'}current{/if}"><a href="{url route='seller_order/index'}"><span>订单管理</span></a></li>
                 <li class="{if $app->controller->id eq 'my_store'}current{/if}"><a href="{url route='my_store/index'}"><span>店铺设置</span></a></li>
-                <li class="{if $app->controller->id eq 'appmarket'}current{/if}"><a href="{url route='appmarket/index'}"><span>插件市场</span></a></li>
                 <!--{/if}-->
             </ul>
     	</div>
