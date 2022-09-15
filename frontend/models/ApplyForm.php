@@ -57,6 +57,10 @@ class ApplyForm extends Model
 			$this->errors = Language::get('input_store_name');
 			return false;
 		}
+		if(empty($post->region_name)) {
+			$this->errors = Language::get('region_name_empty');
+			return false;
+		}
 		if(($store = StoreModel::find()->select('store_id')->where(['store_name' => $post->store_name])->one())) {
 			if(!$this->store_id || ($this->store_id != $store->store_id)) {
 				$this->errors = Language::get('store_name_existed');
@@ -168,10 +172,10 @@ class ApplyForm extends Model
 	 * 检测身份证、营业执照
 	 */
 	private function checkIdentity($post) {
-		if(empty($post->identity_front) || empty($post->identity_back)) {
-			$this->errors = Language::get('identity_empty');
-			return false;
-		}
+		// if(empty($post->identity_front) || empty($post->identity_back)) {
+		// 	$this->errors = Language::get('identity_empty');
+		// 	return false;
+		// }
 
 		if($post->stype == 'company') {
 			if(empty($post->business_license)) {
