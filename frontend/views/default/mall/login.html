@@ -29,13 +29,13 @@
               <dl class="clearfix">
                 <!--<dt>{$lang.username}</dt>-->
                 <dd>
-                  <input class="input" type="text" name="username"  id="username" placeholder="{$lang.username}" value="buyer" />
+                  <input class="input" type="text" name="username"  id="username" placeholder="{$lang.username}" value="" />
                   <i class="i-name"></i> </dd>
               </dl>
               <dl class="clearfix">
                 <!--<dt>{$lang.password}</dt>-->
                 <dd>
-                  <input class="input" type="password" name="password"  id="password" placeholder="{$lang.password}" value="123456" />
+                  <input class="input" type="password" name="password"  id="password" placeholder="{$lang.password}" value="" />
                   <i class="i-psw"></i> </dd>
               </dl>
               <!--{if $app->params['captcha_status']['login']}-->
@@ -65,8 +65,9 @@
                 </dd>
               </dl>
               <div class="partner-login">
-                <h3>{$lang.use_partner_account_login} <a href="{url route='find_password/index'}" class="find-password">{$lang.forget_password}</a></h3>
-                <p> <a href="{url route='connect/qq' redirect=$redirect}" target="_blank"><img src="{res file='images/qq_n.png'}" /> QQ</a> &nbsp;&nbsp; <a href="{url route='connect/alipay' redirect=$redirect}" target="_blank"><img src="{res file='images/alipay_n.png'}" /> 支付宝</a> &nbsp;&nbsp; <a href="{url route='connect/xwb' redirect=$redirect}" target="_blank"><img  src="{res file='images/xwb_n.png'}" /> 新浪微博</a> &nbsp;&nbsp; <a href="{url route='connect/weixin' redirect=$redirect}" target="_blank"><img src="{res file='images/wx_n.png'}" /> 微信登录</a> &nbsp;&nbsp; </p>
+                <!-- <h3>{$lang.use_partner_account_login} <a href="{url route='find_password/index'}" class="find-password">{$lang.forget_password}</a></h3> -->
+                <a href="{url route='find_password/index'}" class="find-password">{$lang.forget_password}</a>
+                <!-- <p> <a href="{url route='connect/qq' redirect=$redirect}" target="_blank"><img src="{res file='images/qq_n.png'}" /> QQ</a> &nbsp;&nbsp; <a href="{url route='connect/alipay' redirect=$redirect}" target="_blank"><img src="{res file='images/alipay_n.png'}" /> 支付宝</a> &nbsp;&nbsp; <a href="{url route='connect/xwb' redirect=$redirect}" target="_blank"><img  src="{res file='images/xwb_n.png'}" /> 新浪微博</a> &nbsp;&nbsp; <a href="{url route='connect/weixin' redirect=$redirect}" target="_blank"><img src="{res file='images/wx_n.png'}" /> 微信登录</a> &nbsp;&nbsp; </p> -->
               </div>
             </form>
           </div>
