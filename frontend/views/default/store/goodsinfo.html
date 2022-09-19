@@ -27,9 +27,9 @@
 					class="fresco {if $smarty.foreach.fe_item.iteration gt 1}hidden{/if}">{$lang.view_bigimg}</a>
 				<!--{/foreach}-->
 			</div>
-			<div class="collect-goods ml20 mr20">
+			<!-- <div class="collect-goods ml20 mr20">
 				<a href="javascript:collect_goods({$goods.goods_id});">加入收藏</a>
-			</div>
+			</div> -->
 			<div class="goods-report float-left ml20 mr20">
 				<a href="{url route='report/index' id=$goods.goods_id redirect=$redirect}" target="_blank">虚假举报</a>
 			</div>
@@ -186,7 +186,7 @@
 					</ul>
 					<!--{/if}-->
 				</div>
-				<div class="buy-btn mb20 ml10"> <a href="javascript:buy(false);" class="buy-now btn"> {$lang.buy_now}
+				<div class="buy-btn mb20 ml10"> <a href="javascript:collect_goods({$goods.goods_id});" class="buy-now btn"> {$lang.buy_now}
 					</a> <a href="javascript:show_connection('#popup_window');" class="add-to-cart btn relative">
 						{$lang.add_to_cart}<i
 							style="display:block;height:0px;width:0px;right:0px;top:-30px;position:absolute;"></i> </a>
