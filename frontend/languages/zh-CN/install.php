@@ -105,8 +105,8 @@ return array(
 	'buyer_create_fail' => '买家用户创建失败',
 	
 	'default_site_name' => 'ShopWind演示站',
-	'default_site_title' => 'ShopWind开源电商系统 - 专业的B2B2C电商系统解决方案',
+	'default_site_title' => '工出头',
 	'default_site_description' => 'ShopWind专注于研发符合时代发展需要的电子商务商城系统，以专业化的服务水平为企业级用户提供B2B2C、O2O等电子商务平台解决方案',
 	'default_site_keywords' => 'PHP开源系统,多用户商城系统,B2B2C电商软件,O2O本地生活服务',
-	'default_hot_keywords' => '小米,苹果,华为,康佳,格力,GUCCI,古斯特,ZARA,优衣库,韩都衣舍',
+	'default_hot_keywords' => '',
 );
