@@ -33,7 +33,7 @@ $(function(){
 	$('.J_ShowCategory .allcategory').hover(function(){
 		$(this).find('.allcategory-list').show();
 	},function(){
-		$(this).find('.allcategory-list').hide();
+		$(this).find('.allcategory-list').show();
 	});
 	
 	if($('body').find('.J_SearchType li').length > 0) {

@@ -74,7 +74,7 @@
 .mall-nav ul .each a{color: #333;font: 400 16px/34px "microsoft yahei"; height: 44px; line-height:44px;    padding: 0 20px;    text-align: center;text-decoration: none;}
 .mall-nav ul .each a.current,.mall-nav ul .each a:hover{ background:none; color:#E4393C;}
 .mall-nav ul .allcategory{ height:44px; font-family:Tahoma, Geneva, sans-serif}
-.mall-nav ul .allcategory .allsort{ width:191px;background:#e23435; padding:0 10px 0 30px; height:44px; font:400 15px/44px "microsoft yahei";}
+.mall-nav ul .allcategory .allsort{ width:250px;background:#e23435; padding:0 10px 0 30px; height:44px; font:400 15px/44px "microsoft yahei";}
 .mall-nav.not-index{border-bottom:1px #000 solid;}
 
 .mall-nav .wrap-line{ width:100%; position:absolute; height:2px; bottom:0; background:#ec5151;}
@@ -89,13 +89,13 @@
 #header .allcategory-list{position:absolute;left:0;top:44px;}
 
 
-.allcategory-list{width:231px; background-color: rgba(0,0,0); text-align:left;z-index:100;border-bottom:1px #2b2b2b solid}
+.allcategory-list{width:290px; background-color: rgba(0,0,0); height: calc(100vh - 360px); overflow: auto; text-align:left;z-index:100;border-bottom:1px #2b2b2b solid}
 .allcategory-list.index {background-color: rgba(0,0,0, 0.6);}
 .allcategory-list .content{border-top:1px #2b2b2b solid;}
 .allcategory-list .item{float:left; height:40px;line-height:20px;z-index:99;}
 .allcategory-list .index{height:71.23px;}
 .allcategory-list .item:hover{background-color: rgba(0,0,0,0.6);}
-.allcategory-list .item .pborder{padding-left:50px;cursor:pointer;width:180px; position:relative; padding-top:12px;}
+.allcategory-list .item .pborder{cursor:pointer;width:280px; position:relative; padding-top:12px;}
 .allcategory-list .item .pborder p{font-size:14px;font-weight: 400; position:relative;
 padding-right: 10px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; color:#fff;}
 .allcategory-list .item .pborder a{color:#fff; font-weight:400; font-size:15px}
@@ -124,7 +124,7 @@ padding-right: 10px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden
 
 .allcategory-list .item .pborder a:hover{color:#e23435; text-decoration:none;}
 .allcategory-list .item:hover .pborder i,
-.allcategory-list .hover .pborder i{ display:none;}
+/* .allcategory-list .hover .pborder i{ display:none;} */
 .allcategory-list .item:hover .pop,
 .allcategory-list .hover .pop{display:block;position:absolute;border:1px solid #2b2b2b;left:230px;top:0px;background:#fff;width:970px;min-height:498.5px;}
 

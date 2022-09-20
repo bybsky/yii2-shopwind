@@ -1,82 +1,97 @@
 {include file="top.html"}
-<div id="header" class="w-full">
+<div id="header" class="w-full" style="position: sticky; top:0px; background-color:white;">
 	<div class="shop-t w clearfix pb20 mb10 mt5">
-		<div class="logo mt10"> <a href="{$siteUrl}" title="{$app->params['site_title']}"><img height="60" alt="{$app->params['site_title']}" src="{$app->params['site_logo']|url_format}" /></a> </div>
-		<div class="top-search"> 
+		<div class="logo mt10"> <a href="{$siteUrl}" title="{$app->params['site_title']}"><img height="60"
+					alt="{$app->params['site_title']}" src="{$app->params['site_logo']|url_format}" /></a> </div>
+		<div class="top-search">
 			<div class="top-search-box clearfix">
 				<div class="form-fields">
-					<form method="GET" action="{if $app->controller->action->id eq 'store'}{url route='search/store'}{else}{url route='search/index'}{/if}" class="clearfix">
-                    	<!--{if !$app->urlManager->enablePrettyUrl}-->
-                        <input type="hidden" name="r" value="search/{if $app->controller->action->id eq 'store'}store{else}index{/if}" />
-                        <!--{/if}-->
-                        <ul class="select-act J_SearchType">
-                        	<li class="{if $app->controller->action->id eq 'index'}current{/if}"><span value="index">{$lang.goods}</span></li>
-                            <li class="{if $app->controller->action->id eq 'store'}current{/if}"><span value="store">{$lang.store}</span></li>
-                        </ul>
-                        
-						<input type="text" name="keyword" value="{$smarty.get.keyword|default}" class="keyword" placeholder="{$hot_keywords.0}" />
+					<form method="GET"
+						action="{if $app->controller->action->id eq 'store'}{url route='search/store'}{else}{url route='search/index'}{/if}"
+						class="clearfix">
+						<!--{if !$app->urlManager->enablePrettyUrl}-->
+						<input type="hidden" name="r"
+							value="search/{if $app->controller->action->id eq 'store'}store{else}index{/if}" />
+						<!--{/if}-->
+						<ul class="select-act J_SearchType">
+							<li class="{if $app->controller->action->id eq 'index'}current{/if}"><span
+									value="index">{$lang.goods}</span></li>
+							<li class="{if $app->controller->action->id eq 'store'}current{/if}"><span
+									value="store">{$lang.store}</span></li>
+						</ul>
+
+						<input type="text" name="keyword" value="{$smarty.get.keyword|default}" class="keyword"
+							placeholder="{$hot_keywords.0}" />
 						<input type="submit" value="{$lang.search}" class="submit" hidefocus="true" />
 					</form>
 				</div>
 			</div>
-			<div class="top-search-keywords"> <span>{$lang.hot_search}{$lang.colon}</span> 
-				<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}--> 
-				<a {if $smarty.foreach.fe_keyword.first eq 1}style="color:#ff0000;"{/if} href="{url route='search/index' keyword=$keyword}">{$keyword}</a> 
-				<!--{/foreach}--> 
+			<div class="top-search-keywords"> <span>{$lang.hot_search}{$lang.colon}</span>
+				<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->
+				<a {if $smarty.foreach.fe_keyword.first eq 1}style="color:#ff0000;" {/if}
+					href="{url route='search/index' keyword=$keyword}">{$keyword}</a>
+				<!--{/foreach}-->
 			</div>
 		</div>
 	</div>
-    <!--{if $index}-->
-    <div class="shop-t-pop J_SearchFixed hidden">
-    	<div class="w clearfix">
-    	<div class="logo mt10"> <a href="{$siteUrl}" title="{$app->params['site_title']}"><img height="60" alt="{$app->params['site_title']}" src="{$app->params['site_logo']|url_format}" /></a> </div>
-		<div class="top-search"> 
-			
-			<div class="top-search-box clearfix">
-				<div class="form-fields">
-					<form method="GET" action="{url route='search/index'}" class="clearfix">
-                        <ul class="select-act J_SearchType">
-                        	<li class="{if $app->controller->action->id eq 'index'}current{/if}"><span value="index">{$lang.goods}</span></li>
-                            <li class="{if $app->controller->action->id eq 'store'}current{/if}"><span value="store">{$lang.store}</span></li>
-                        </ul>
-                        
-						<input type="text" name="keyword" value="{$smarty.get.keyword|default}" class="keyword" placeholder="{$hot_keywords.0}" />
-						<input type="submit" value="{$lang.search}" class="submit" hidefocus="true" />
-					</form>
+	<!--{if $index}-->
+	<div class="shop-t-pop J_SearchFixed hidden">
+		<div class="w clearfix">
+			<div class="logo mt10"> <a href="{$siteUrl}" title="{$app->params['site_title']}"><img height="60"
+						alt="{$app->params['site_title']}" src="{$app->params['site_logo']|url_format}" /></a> </div>
+			<div class="top-search">
+
+				<div class="top-search-box clearfix">
+					<div class="form-fields">
+						<form method="GET" action="{url route='search/index'}" class="clearfix">
+							<ul class="select-act J_SearchType">
+								<li class="{if $app->controller->action->id eq 'index'}current{/if}"><span
+										value="index">{$lang.goods}</span></li>
+								<li class="{if $app->controller->action->id eq 'store'}current{/if}"><span
+										value="store">{$lang.store}</span></li>
+							</ul>
+
+							<input type="text" name="keyword" value="{$smarty.get.keyword|default}" class="keyword"
+								placeholder="{$hot_keywords.0}" />
+							<input type="submit" value="{$lang.search}" class="submit" hidefocus="true" />
+						</form>
+					</div>
 				</div>
+
 			</div>
-			
 		</div>
-        </div>
-    </div>
-    <!--{/if}-->
-	<div  class="w-full mall-nav relative {if !$index}not-index J_ShowCategory{/if}">
-		<div class="mall-bg w">
-			<ul class="w clearfix">
-				<li class="allcategory float-left"> <a class="allsort" {if !$gcategories}href="{url route='category/index'}"{/if}>所有商品分类<b></b></a> 
-					<div class="allcategory-list {if $index}index{else}hidden{/if}">
-						<div class="content clearfix J_Gcategory"> 
+	</div>
+	<!--{/if}-->
+	<div class="w-full mall-nav relative {if !$index}not-index J_ShowCategory{/if}">
+		<div class="mall-bg ">
+			<ul class=" clearfix">
+				<li class="allcategory float-left"> <a class="allsort" {if
+						!$gcategories}href="{url route='category/index'}" {/if}>所有商品分类<b></b></a>
+					<div class="allcategory-list ">
+						<div class="content clearfix J_Gcategory">
 							<!--{foreach from=$gcategories item=$categories name=fe_categories}-->
 							<!--{if ($index && $smarty.foreach.fe_categories.iteration le 7) || !$index}-->
-							<div class="item {if $index}index{/if}" item-id="{$categories.items.0.groupid},{$categories.items.0.cate_id}">
+							<div class="item {if $index}index{/if}"
+								item-id="{$categories.items.0.groupid},{$categories.items.0.cate_id}">
 								<div class="pborder">
-									<ins class="cat-iconfont ico-{$smarty.foreach.fe_categories.iteration}"></ins>
-									<p> 
-										<!--{foreach from=$categories.items item=category name=fe_category}--> 
-										<a href="{url route='search/index' cate_id=$category.cate_id}" target="_blank">{$category.cate_name|escape}</a> {if !$smarty.foreach.fe_category.last}<a href="javascript:;">、</a>{/if} 
-										<!--{/foreach}--> 
+									<!-- <ins class="cat-iconfont ico-{$smarty.foreach.fe_categories.iteration}"></ins> -->
+									<p>
+										<!--{foreach from=$categories.items item=category name=fe_category}-->
+										<a href="{url route='search/index' cate_id=$category.cate_id}"
+											target="_blank">{$category.cate_name|escape}</a> {if
+										!$smarty.foreach.fe_category.last}<a href="javascript:;">、</a>{/if}
+										<!--{/foreach}-->
 									</p>
 									<!--{if $index}-->
 									<h3>
 										<!--{foreach from=$categories.subitems item=child name=fe_child}-->
-										<a href="{url route='search/index' cate_id=$child.cate_id}" class="child">{$child.cate_name|escape}</a>
+										<a href="{url route='search/index' cate_id=$child.cate_id}"
+											class="child">{$child.cate_name|escape}</a>
 										<!--{/foreach}-->
-                                    </h3>
-                                    <!--{/if}-->
+									</h3>
+									<!--{/if}-->
 								</div>
-								<div class="pop" style="top: 0;">
-									<div class="catlist float-left"></div>
-								</div>
+
 							</div>
 							<!--{/if}-->
 							<!--{/foreach}-->
