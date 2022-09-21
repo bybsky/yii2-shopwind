@@ -53,16 +53,16 @@
 							class="tm NumHours"> {$goods.promotion.lefttime.h} </span> <em> 小时 </em> <span
 							class="tm NumMins"> {$goods.promotion.lefttime.m} </span> <em> 分 </em> <span
 							class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
-						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em> 
-							class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
-						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em> 
-							class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
-						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em> 
-							class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
-						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em> 
-							class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
-						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em> 
-							class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
+						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
 						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
 						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
 						class="tm NumSeconds"> {$goods.promotion.lefttime.s} </span> <em> 秒 </em>
@@ -186,7 +186,8 @@
 					</ul>
 					<!--{/if}-->
 				</div>
-				<div class="buy-btn mb20 ml10"> <a href="javascript:collect_goods({$goods.goods_id});" class="buy-now btn"> {$lang.buy_now}
+				<div class="buy-btn mb20 ml10"> <a href="javascript:collect_goods({$goods.goods_id});"
+						class="buy-now btn"> {$lang.buy_now}
 					</a> <a href="javascript:show_connection('#popup_window');" class="add-to-cart btn relative">
 						{$lang.add_to_cart}<i
 							style="display:block;height:0px;width:0px;right:0px;top:-30px;position:absolute;"></i> </a>
@@ -317,7 +318,7 @@
 			<p style="font-size: 22px;color:black;margin:24px 28px;font-weight:bold">咨询商家</p>
 		</div>
 		<div style="margin: 0 auto;width:125px;height: 125px;">
-			<img src="img/1.jpg" width="125px" height="125px" ; />
+			<img src="{$storeInfo.store_logo}" width="125px" height="125px" ; />
 		</div>
 		<div style="margin-top:30px;">
 			<div style="display: inline-block;margin-left:24%;width: 100px;height: 100%;">
@@ -326,8 +327,8 @@
 
 			</div>
 			<div style="display: inline-block;margin-left: 30px ;">
-				<p style="font-size: 22px;">商家名字</p>
-				<p style="margin-top: 30px;font-size: 32px;color: #0F9AFF;">400-600-1162</p>
+				<p style="font-size: 22px;">{$storeInfo.store_name}</p>
+				<p style="margin-top: 30px;font-size: 32px;color: #0F9AFF;">{$storeInfo.tel}</p>
 			</div>
 		</div>
 	</div>
@@ -339,44 +340,38 @@
 
 
 
-
-
-
-
-
-
 <script type="text/javascript">
 	var specs = new Array();
-		{foreach from=$goods.goodsSpec item=spec}
-		specs.push(new spec({$spec.spec_id|default: 0}, '{$spec.spec_1}', '{$spec.spec_2}', '{$spec.image|url_format}', {$spec.price|default: 0}, {$goods.mkprice|default: 0}, {$spec.stock|default: 0}, {$goods.goods_id|default: 0}));
-		{/foreach}
-	var specQty = {$goods.spec_qty};
-	var defSpec = {$goods.default_spec|default};
-	var goodsspec = new goodsspec(specs, specQty, defSpec);
+	{foreach from = $goods.goodsSpec item = spec }
+	specs.push(new spec({ $spec.spec_id |default: 0 }, '{$spec.spec_1}', '{$spec.spec_2}', '{$spec.image|url_format}', { $spec.price |default: 0 }, { $goods.mkprice |default: 0 }, { $spec.stock |default: 0 }, { $goods.goods_id |default: 0 }));
+	{/foreach}
+		var specQty = { $goods.spec_qty };
+		var defSpec = { $goods.default_spec |default};
+		var goodsspec = new goodsspec(specs, specQty, defSpec);
 
-	$(function () {
-		$('.J_Region').parent().hover(function () {
-			if ($('.J_Province').html() == '') {
-				setGoodsRegionInfo($('.J_Province'), 0);
-			}
-			$(this).children().next('div').show();
-		}, function () {
-			$(this).children().next('div').hide();
-		});
+		$(function () {
+			$('.J_Region').parent().hover(function () {
+				if ($('.J_Province').html() == '') {
+					setGoodsRegionInfo($('.J_Province'), 0);
+				}
+				$(this).children().next('div').show();
+			}, function () {
+				$(this).children().next('div').hide();
+			});
 
-		$('.J_Province').on('click', 'a', function () {
-			$(this).parent().children().removeClass('selected');
-			$(this).addClass('selected');
-			$('.J_City').css('border-top', '1px #ddd dotted');
-			setGoodsRegionInfo($('.J_City'), $(this).attr('id'));
+			$('.J_Province').on('click', 'a', function () {
+				$(this).parent().children().removeClass('selected');
+				$(this).addClass('selected');
+				$('.J_City').css('border-top', '1px #ddd dotted');
+				setGoodsRegionInfo($('.J_City'), $(this).attr('id'));
+			})
+
+			/* 加载运费情况 */
+			load_city_logistic('{$goods.dt_id|default:0}', '{$goods.store_id}', 0);
+
+			$('.J_PromotoolMoreLink').click(function () {
+				$(this).parent().parent().find('.toggle').toggle();
+				$(this).toggleClass('active');
+			});
 		})
-
-		/* 加载运费情况 */
-		load_city_logistic('{$goods.dt_id|default:0}', '{$goods.store_id}', 0);
-
-		$('.J_PromotoolMoreLink').click(function () {
-			$(this).parent().parent().find('.toggle').toggle();
-			$(this).toggleClass('active');
-		});
-	})
 </script>
