@@ -209,11 +209,11 @@ class Menu
 			// 	'name'  => 'my_payment',
 			// );
 				
-			// $menu['im_seller']['submenu']['my_delivery'] = array(
-			// 	'text'  => Language::get('my_delivery'),
-			// 	'url'   => Url::toRoute(['my_delivery/index']),
-			// 	'name'  => 'my_delivery',
-			// );
+			$menu['im_seller']['submenu']['my_delivery'] = array(
+				'text'  => Language::get('my_delivery'),
+				'url'   => Url::toRoute(['my_delivery/index']),
+				'name'  => 'my_delivery',
+			);
 				
 			// $menu['im_seller']['submenu']['my_navigation'] = array(
 			// 	'text'  => Language::get('my_navigation'),
