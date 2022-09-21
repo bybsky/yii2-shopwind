@@ -72,6 +72,7 @@
     border-radius: 100%;
     opacity: 0.3;
   }
+
   .imgbox span {
     position: absolute;
     right: 5px;
@@ -236,7 +237,7 @@
                   <input name="price" value="{$goods._specs.0.price}" type="text" class="text width_short" />
                 </div>
               </li>
-      
+
 
               <li class="subbox clearfix">
                 <label class="subbox-title">商品规格：</label>
@@ -294,7 +295,7 @@
                   <input type="text" name="video" class="width_long" value="{$goods.video}" />
                   <input type="file" name="filevideo" value="上传视频" />
                   <p class="gray mt5">适用于移动端主图视频，仅支持mp4格式，视频大小不超过3M</p>
-              </div>
+                </div>
               </li>
               <li class="subbox clearfix">
                 <label class="subbox-title">商品主图：</label>
@@ -341,7 +342,9 @@
                   <div class="padding10 clearfix J_LongImage">
                     <p class="relative border margin10 float-left imgbox padding10 center"
                       style="width: 120px; height: 120px; overflow: hidden;">
-                      <img class="inline-block" src='{$goods.long_image|default:"{res file="images/image.png"}"|url_format}' width="80" height="120" />
+                      <img class="inline-block"
+                        src='{$goods.long_image|default:"{res file="images/image.png"}"|url_format}' width="80"
+                        height="120" />
                       <!--{if $goods.long_image}-->
                       <span>X</span>
                       <!--{/if}-->
@@ -350,8 +353,8 @@
                       <h3 class="bold mb10">商品长图</h3>
                       <p class="gray">用于移动端商品瀑布流效果显示图，请上传长图，宽高建议为800PX*1200PX<br>建议JPG格式，图片大小建议不超过1M </p>
                       <div class="mt20 relative">
-                        <input type="file" name="longimage" class="type-file-image absolute pointer" size="30" hidefocus="true"
-                          style="opacity: 0;left: 0;top:0; z-index: 10;width: 70px;height: 30px;" />
+                        <input type="file" name="longimage" class="type-file-image absolute pointer" size="30"
+                          hidefocus="true" style="opacity: 0;left: 0;top:0; z-index: 10;width: 70px;height: 30px;" />
                         <input type="hidden" name="long_image" value="{$goods.long_image}" />
                         <p class="layui-btn layui-btn-normal layui-btn-sm">上传图片</p>
                       </div>
@@ -435,52 +438,70 @@
                 </div>
               </li>
               <!--{/if}-->
-            </ul>
-            <h5 class="box-title">3.其他设置</h5>
-            <ul class="box-body">
-              <li class="subbox clearfix">
-                <label class="subbox-title">商品上架：</label>
-                <div class="subbox-body">
-                  <label class="switch-checkbox-radio box-align-center J_SwtcherInput {if $goods.if_show}checked{/if}"
-                    for="if_show"><span class="switcher-style block"></span></label>
-                  <input type="checkbox" name="if_show" value="1" id="if_show" class="hidden" {if
-                    $goods.if_show}checked="checked" {/if} />
-                </div>
-              </li>
-              <li class="subbox clearfix">
-                <label class="subbox-title">商品推荐：</label>
-                <div class="subbox-body clearfix">
-                  <label
-                    class="switch-checkbox-radio inline-block box-align-center float-left J_SwtcherInput {if $goods.recommended}checked{/if}"
-                    for="recommended"><span class="switcher-style block"></span></label>
-                  <input type="checkbox" name="recommended" value="1" id="recommended" class="hidden" {if
-                    $goods.recommended}checked="checked" {/if} />
-                  <span class="gray float-left block mt5 ml10">{$lang.note_for_recommended}</span>
-                </div>
-              </li>
-              <li class="subbox clearfix">
-                <label class="subbox-title">新款上市：</label>
-                <div class="subbox-body clearfix">
-                  <label
-                    class="switch-checkbox-radio inline-block box-align-center float-left J_SwtcherInput {if $goods.isnew}checked{/if}"
-                    for="isnew"><span class="switcher-style block"></span></label>
-                  <input type="checkbox" name="isnew" value="1" id="isnew" class="hidden" {if
-                    $goods.isnew}checked="checked" {/if} />
-                  <span class="gray float-left block mt5 ml10">{$lang.note_for_isnew}</span>
-                </div>
-              </li>
-              <li class="subbox clearfix">
-                <label class="subbox-title">商品标签：</label>
-                <div class="subbox-body">
-                  <input style="width:300px;" type="text" name="tags" value="{$goods.tags|escape}"
-                    class="text width_normal" />
-                  <div class="gray mt5">填写商品卖点，展示在移动端标题下方</div>
-                </div>
-              </li>
-            </ul>
-            <div class="issuance">
-              <input type="submit" class="btn" value="{$lang.submit}" />
-            </div>
+
+              <h5 class="box-title">3.物流及配送设置</h5>
+              <ul class="box-body">
+                <li class="subbox clearfix">
+                  <label class="subbox-title">{$lang.delivery_template}：</label>
+                  <div class="subbox-body">
+                    <select class="text" name="dt_id">
+                      <!--{foreach from=$deliverys item=delivery name=fe_delivery}-->
+                      <option value="{$delivery.template_id}" {if $app->controller->action->id eq 'add' &&
+                        $smarty.foreach.fe_delivery.first} checked="checked" {elseif
+                        $goods.dt_id==$delivery.template_id}
+                        selected="selected" {/if} >{$delivery.name}</option>
+                      <!--{/foreach}-->
+                    </select>
+                    <a href="{url route='my_delivery/index'}" target="_blank"
+                      style="color:blue; text-decoration:none">{$lang.delivery_template_list}</a>
+                  </div>
+                </li>
+              </ul>
+              <h5 class="box-title">4.其他设置</h5>
+              <ul class="box-body">
+                <li class="subbox clearfix">
+                  <label class="subbox-title">商品上架：</label>
+                  <div class="subbox-body">
+                    <label class="switch-checkbox-radio box-align-center J_SwtcherInput {if $goods.if_show}checked{/if}"
+                      for="if_show"><span class="switcher-style block"></span></label>
+                    <input type="checkbox" name="if_show" value="1" id="if_show" class="hidden" {if
+                      $goods.if_show}checked="checked" {/if} />
+                  </div>
+                </li>
+                <li class="subbox clearfix">
+                  <label class="subbox-title">商品推荐：</label>
+                  <div class="subbox-body clearfix">
+                    <label
+                      class="switch-checkbox-radio inline-block box-align-center float-left J_SwtcherInput {if $goods.recommended}checked{/if}"
+                      for="recommended"><span class="switcher-style block"></span></label>
+                    <input type="checkbox" name="recommended" value="1" id="recommended" class="hidden" {if
+                      $goods.recommended}checked="checked" {/if} />
+                    <span class="gray float-left block mt5 ml10">{$lang.note_for_recommended}</span>
+                  </div>
+                </li>
+                <li class="subbox clearfix">
+                  <label class="subbox-title">新款上市：</label>
+                  <div class="subbox-body clearfix">
+                    <label
+                      class="switch-checkbox-radio inline-block box-align-center float-left J_SwtcherInput {if $goods.isnew}checked{/if}"
+                      for="isnew"><span class="switcher-style block"></span></label>
+                    <input type="checkbox" name="isnew" value="1" id="isnew" class="hidden" {if
+                      $goods.isnew}checked="checked" {/if} />
+                    <span class="gray float-left block mt5 ml10">{$lang.note_for_isnew}</span>
+                  </div>
+                </li>
+                <li class="subbox clearfix">
+                  <label class="subbox-title">商品标签：</label>
+                  <div class="subbox-body">
+                    <input style="width:300px;" type="text" name="tags" value="{$goods.tags|escape}"
+                      class="text width_normal" />
+                    <div class="gray mt5">填写商品卖点，展示在移动端标题下方</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="issuance">
+                <input type="submit" class="btn" value="{$lang.submit}" />
+              </div>
           </form>
         </div>
       </div>
@@ -489,7 +510,7 @@
 </div>
 <script type="text/javascript">
   //<!CDATA[
-  var SPEC = {$goods.spec_json};
+  var SPEC = { $goods.spec_json };
   function add_uploadedfile(file_data) {
     if (file_data.instance == 'goods_image') {
       $('#goods_images').append('<li style="z-index:4" ectype="handle_pic" file_id="' + file_data.file_id + '" thumbnail="' + url_format(file_data.thumbnail) + '"><input type="hidden" value="' + file_data.file_id + '" name="goods_file_id[]"/><div class="pic"><img src="' + url_format(file_data.thumbnail) + '" width="80" height="80" alt="" /><div ectype="handler" class="bg"><p class="operation"><span class="cut_in" ectype="set_cover" ecm_title="{$lang.set_cover}"></span><span class="delete" ectype="drop_image" ecm_title="{$lang.drop}"></span></p></div></div></li>');
@@ -631,7 +652,7 @@
         imgObj.html('<img class="inline-block" width="80" height="120" src="' + res + '"><span>X</span>');
       });
     });
-    $('.J_LongImage .imgbox').find('span').click(function() {
+    $('.J_LongImage .imgbox').find('span').click(function () {
       $(this).parent().html('<img class="inline-block" width="80" height="120" src="{res file="images/image.png"}">');
       $('input[name="long_image"]').val('');
     })
