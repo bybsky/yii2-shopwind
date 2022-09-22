@@ -187,12 +187,12 @@ class Menu
 				'url'   => Url::toRoute(['seller_order/index']),
 				'name'  => 'seller_order',
 			);
-			// 退款管理
-			$menu['im_seller']['submenu']['refund_receive']  = array(
-				'text' => Language::get('refund_receive'),
-				'url'  => Url::toRoute(['refund/receive']),
-				'name' => 'refund_receive',
-			);
+			// // 退款管理
+			// $menu['im_seller']['submenu']['refund_receive']  = array(
+			// 	'text' => Language::get('refund_receive'),
+			// 	'url'  => Url::toRoute(['refund/receive']),
+			// 	'name' => 'refund_receive',
+			// );
 			$menu['im_seller']['submenu']['my_comment'] = array(
 				'text'  => Language::get('my_comment'),
 				'url'   => Url::toRoute(['my_comment/index']),
@@ -203,11 +203,11 @@ class Menu
 				'url'   => Url::toRoute(['my_store/index']),
 				'name'  => 'my_store',
 			);
-			$menu['im_seller']['submenu']['my_payment'] =  array(
-				'text'  => Language::get('my_payment'),
-				'url'   => Url::toRoute(['my_payment/index']),
-				'name'  => 'my_payment',
-			);
+			// $menu['im_seller']['submenu']['my_payment'] =  array(
+			// 	'text'  => Language::get('my_payment'),
+			// 	'url'   => Url::toRoute(['my_payment/index']),
+			// 	'name'  => 'my_payment',
+			// );
 				
 			$menu['im_seller']['submenu']['my_delivery'] = array(
 				'text'  => Language::get('my_delivery'),
@@ -221,75 +221,75 @@ class Menu
 			// 	'name'  => 'my_navigation',
 			// );
 			  
-			$menu['im_seller']['submenu']['seller_coupon']  = array(
-				'text'  => Language::get('seller_coupon'),
-				'url'   => Url::toRoute(['seller_coupon/index']),
-				'name'  => 'seller_coupon',
-			);
+			// $menu['im_seller']['submenu']['seller_coupon']  = array(
+			// 	'text'  => Language::get('seller_coupon'),
+			// 	'url'   => Url::toRoute(['seller_coupon/index']),
+			// 	'name'  => 'seller_coupon',
+			// );
 
-			// 应用市场
-			$menu['im_seller']['submenu']['appmarket']  = array(
-				'text' => Language::get('appmarket'),
-				'url'  => Url::toRoute(['appmarket/index']),
-				'name' => 'appmarket',
-			);
-			$menu['im_seller']['submenu']['my_category'] = array(
-				'text'  => Language::get('my_category'),
-				'url'   => Url::toRoute(['my_category/index']),
-				'name'  => 'my_category',
-			);
-			$menu['im_seller']['submenu']['my_qa'] = array(
-				'text'  => Language::get('my_qa'),
-				'url'   => Url::toRoute(['my_qa/index']),
-				'name'  => 'my_qa',
-			);
+			// // 应用市场
+			// $menu['im_seller']['submenu']['appmarket']  = array(
+			// 	'text' => Language::get('appmarket'),
+			// 	'url'  => Url::toRoute(['appmarket/index']),
+			// 	'name' => 'appmarket',
+			// );
+			// $menu['im_seller']['submenu']['my_category'] = array(
+			// 	'text'  => Language::get('my_category'),
+			// 	'url'   => Url::toRoute(['my_category/index']),
+			// 	'name'  => 'my_category',
+			// );
+			// $menu['im_seller']['submenu']['my_qa'] = array(
+			// 	'text'  => Language::get('my_qa'),
+			// 	'url'   => Url::toRoute(['my_qa/index']),
+			// 	'name'  => 'my_qa',
+			// );
 				
-			// 营销中心
-			$menu['promotool'] = array(
-				'name'  => 'promotool',
-				'text'  => Language::get('promotool'),
-				'submenu'   => array(),
-			);
-			$menu['promotool']['submenu']['teambuy'] = array(
-				'text'  => Language::get('teambuy'),
-				'url'   => Url::toRoute(['teambuy/index']),
-				'name'  => 'teambuy',
-			);
-			$menu['promotool']['submenu']['seller_limitbuy'] = array(
-				'text'  => Language::get('seller_limitbuy'),
-				'url'   => Url::toRoute(['seller_limitbuy/index']),
-				'name'  => 'seller_limitbuy',
-			);
-			$menu['promotool']['submenu']['seller_meal'] = array(
-				'text'  => Language::get('seller_meal'),
-				'url'   => Url::toRoute(['seller_meal/index']),
-				'name'  => 'seller_meal',
-			);
-			$menu['promotool']['submenu']['seller_fullfree'] = array(
-				'text'  => Language::get('seller_fullfree'),
-				'url'   => Url::toRoute(['seller_fullfree/index']),
-				'name'  => 'seller_fullfree',
-			);
-			$menu['promotool']['submenu']['seller_fullprefer'] = array(
-				'text'  => Language::get('seller_fullprefer'),
-				'url'   => Url::toRoute(['seller_fullprefer/index']),
-				'name'  => 'seller_fullprefer',
-			);
-			$menu['promotool']['submenu']['wholesale'] = array(
-				'text' => Language::get('wholesale'),
-				'url' => Url::toRoute(['wholesale/index']),
-				'name' => 'wholesale',
-			);
-			$menu['promotool']['submenu']['distribute'] = array(
-				'text' => Language::get('distribute'),
-				'url' => Url::toRoute(['distribute/index']),
-				'name' => 'distribute',
-			);
-			$menu['promotool']['submenu']['seller_exclusive'] = array(
-				'text'  => Language::get('seller_exclusive'),
-				'url'   => Url::toRoute(['seller_exclusive/index']),
-				'name'  => 'seller_exclusive',
-			);
+			// // 营销中心
+			// $menu['promotool'] = array(
+			// 	'name'  => 'promotool',
+			// 	'text'  => Language::get('promotool'),
+			// 	'submenu'   => array(),
+			// );
+			// $menu['promotool']['submenu']['teambuy'] = array(
+			// 	'text'  => Language::get('teambuy'),
+			// 	'url'   => Url::toRoute(['teambuy/index']),
+			// 	'name'  => 'teambuy',
+			// );
+			// $menu['promotool']['submenu']['seller_limitbuy'] = array(
+			// 	'text'  => Language::get('seller_limitbuy'),
+			// 	'url'   => Url::toRoute(['seller_limitbuy/index']),
+			// 	'name'  => 'seller_limitbuy',
+			// );
+			// $menu['promotool']['submenu']['seller_meal'] = array(
+			// 	'text'  => Language::get('seller_meal'),
+			// 	'url'   => Url::toRoute(['seller_meal/index']),
+			// 	'name'  => 'seller_meal',
+			// );
+			// $menu['promotool']['submenu']['seller_fullfree'] = array(
+			// 	'text'  => Language::get('seller_fullfree'),
+			// 	'url'   => Url::toRoute(['seller_fullfree/index']),
+			// 	'name'  => 'seller_fullfree',
+			// );
+			// $menu['promotool']['submenu']['seller_fullprefer'] = array(
+			// 	'text'  => Language::get('seller_fullprefer'),
+			// 	'url'   => Url::toRoute(['seller_fullprefer/index']),
+			// 	'name'  => 'seller_fullprefer',
+			// );
+			// $menu['promotool']['submenu']['wholesale'] = array(
+			// 	'text' => Language::get('wholesale'),
+			// 	'url' => Url::toRoute(['wholesale/index']),
+			// 	'name' => 'wholesale',
+			// );
+			// $menu['promotool']['submenu']['distribute'] = array(
+			// 	'text' => Language::get('distribute'),
+			// 	'url' => Url::toRoute(['distribute/index']),
+			// 	'name' => 'distribute',
+			// );
+			// $menu['promotool']['submenu']['seller_exclusive'] = array(
+			// 	'text'  => Language::get('seller_exclusive'),
+			// 	'url'   => Url::toRoute(['seller_exclusive/index']),
+			// 	'name'  => 'seller_exclusive',
+			// );
 		}
 		elseif(Yii::$app->params['store_allow'])
 		{

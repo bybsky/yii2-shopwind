@@ -374,6 +374,19 @@ function collect_goods(goods_id, altMsg) {
 	return move_favorite(goods_id, 'goods', altMsg);
 }
 
+/**
+ * 
+ * 实现弹出商家的联系方式
+ * @returns 
+ */
+function show_seller_contact(){
+	document.getElementById('delete').style.display='block';
+}
+
+function hide_seller_contact(){
+	document.getElementById('delete').style.display='none';
+}
+
 /* 收藏店铺 */
 function collect_store(store_id, altMsg) {
 	return move_favorite(store_id, 'store', altMsg);
@@ -613,6 +626,17 @@ function js_success(dialog_id) {
 function js_fail(str) {
 	$('#warning').html('<label class="error">' + str + '</label>');
 	$('#warning').show();
+}
+
+/**
+ * 
+ */
+function show_connection(page){
+	layer.open({
+		type:1,
+		title:false,
+		content:$(page)
+	});
 }
 
 jQuery.extend({

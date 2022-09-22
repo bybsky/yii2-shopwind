@@ -76,7 +76,9 @@ class GoodsController extends \common\controllers\BaseMallController
 		
 		// 商品属性
 		$this->params['goods']['props'] = $this->getGoodsProps($post->id);
-		
+		//获取商品对应的商铺信息
+		$this->params['storeInfo'] = StoreModel::find()->where(['store_id' => ($this->params['goods']['store_id'])])->asArray()->one();
+
 		// 最近的商品评价
 		$this->params['gcomments'] = array_merge($this->getComments($post->id, 10), GoodsStatisticsModel::getCommectStatistics($post->id));
 		

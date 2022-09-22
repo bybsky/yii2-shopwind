@@ -53,6 +53,7 @@ class DefaultController extends \common\controllers\BaseMallController
 		$this->params['_foot_tags'] = Resource::import('jquery.plugins/jquery.lazyload.js,cart.js');
 
 		$this->params['page'] = Page::seo();
-        return $this->render('../index.html', $this->params);
+        // return $this->render('../index.html', $this->params);
+		$this->redirect('/brand/index.html');
 	}
 }

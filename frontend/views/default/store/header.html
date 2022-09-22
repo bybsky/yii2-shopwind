@@ -25,24 +25,24 @@
 				<!--{/foreach}--> 
 			</div>
 		</div>
-      	<div class="header_cart {if $carts_top.kinds eq 0}J_GlobalPop{/if}">
-        	<div class="item">
-			<div class="title clearfix"> <b></b><a href="{url route='cart/index'}">去购物车结算</a><em>></em> </div>
-			<div class="shoping"><span class="count-cart J_C_T_GoodsKinds">{$carts_top.kinds|default:0}</span></div>
-			<div class="shadow"></div>
+      	<!-- <div class="header_cart {if $carts_top.kinds eq 0}J_GlobalPop{/if}"> -->
+        	<!-- <div class="item"> -->
+			<!-- <div class="title clearfix"> <b></b><a href="{url route='cart/index'}">去购物车结算</a><em>></em> </div> -->
+			<!-- <div class="shoping"><span class="count-cart J_C_T_GoodsKinds">{$carts_top.kinds|default:0}</span></div> -->
+			<!-- <div class="shadow"></div> -->
 			<!--{if $carts_top.kinds eq 0}-->
-			<div class="cart-list eject-box">
+			<!-- <div class="cart-list eject-box">
 				<div class="nogoods clearfix"> <b></b>购物车中还没有商品，赶紧选购吧！ </div>
-			</div>
+			</div> -->
 			<!--{/if}-->
-            </div>
+            <!-- </div> -->
 		</div>
    </div>
 </div>
 <!--{if $store}-->
 <div id="nav" class="w-full">
     <div class="banner">
-    	<a href="{url route='store/index' id=$store.store_id}" class="w-full block" style="background:url({$store.store_banner|default:'static/images/store_banner.png'|url_format}) no-repeat center center; height:110px;"></a>
+    	<!-- <a href="{url route='store/index' id=$store.store_id}" class="w-full block" style="background:url({$store.store_banner|default:'static/images/store_banner.png'|url_format}) no-repeat center center; height:110px;"></a> -->
     </div>
 	<div class="shop-nav w-full">
         <ul class="w J_ShopNav">

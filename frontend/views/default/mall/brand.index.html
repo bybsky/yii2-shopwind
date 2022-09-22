@@ -7,14 +7,7 @@
     </div>
 	<div id="page-brand" class="w mb20 mt10">
 		<div class="brand-list">
-			<div class="title"><span>品牌专区</span></div>
-			<div class="brand-cate">
-				<a {if !$smarty.get.cate_id} class="curr" {/if} href="{url route='brand/index'}">全部品牌</a>
-				<i class="point">·</i>
-				<!--{foreach from=$categories item=category name=fe_category}-->
-				<a {if $smarty.get.cate_id eq $category.cate_id} class="curr" {/if} href="{url route='brand/index' cate_id=$category.cate_id}">{$category.cate_name}</a>
-				<i class="point" {if $smarty.foreach.fe_category.last} style="display:none;"{/if}>·</i>
-				<!--{/foreach}-->
+			<div class="brand-cate">		
 			</div>
 			<div class="brand-info J_InfiniteList">
 				<ul class="infinite-result clearfix hidden">
